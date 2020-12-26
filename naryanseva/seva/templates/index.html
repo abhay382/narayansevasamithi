@@ -1,0 +1,235 @@
+{% extends 'basic.html' %}
+
+{% block title%} Shree narayan manav seva samiti{% endblock %}
+{% block css %}
+.col-md-3
+{
+display: inline-block;
+margin-left:-4px;
+}
+.carousel-indicators .active {
+background-color: blue;
+}
+.col-md-3 img{
+width: 170px;
+height: 200px;
+}
+body .carousel-indicator li{
+background-color: blue;
+}
+body .carousel-indicators{
+bottom: -40px;
+}
+.carousel-indicators li {
+
+
+    background-color: #7270fc;
+}
+body .carousel-control-prev-icon,
+body .carousel-control-next-icon{
+background-color: blue;
+}
+.carousel-control-prev,
+.carousel-control-next{
+top: auto;
+bottom: auto;
+padding-top: 222px;
+}
+body .no-padding{
+padding-left: 0,
+padding-right: 0;
+}
+{% endblock %}
+{% block body %}
+{% load static %}
+   <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="{% static 'side.jpg' %}" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{% static 'sidetwo.jpg' %}" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{% static 'sides.jpg' %}" alt="Third slide">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="jumbotron">
+  <div class="container text-center">
+    <h1>Shree narayan  manav seva samiti</h1>
+
+    <p>Symbol of happyness</p>
+
+     <p>Help Together </p>
+  </div>
+</div>
+
+<div class="container-fluid bg-3 text-center">
+  <h3>Some of our Work</h3><br>
+   <img src="{% static 'hand.jpg' %}"alt="Girl in a jacket" width="1000" >
+  <div class="row">
+    <div class="col-sm-3">
+      <p>Health</p>
+      <img src="{% static 'helth.jpg' %}" class="img-responsive" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-3">
+      <p>Food</p>
+      <img src="{% static 'food.jpg' %}" class="img-responsive" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-3">
+      <p>Cloth</p>
+      <img src="{% static 'clot.jpg' %}" class="img-responsive" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-3">
+      <p>Eduction</p>
+      <img src="{% static 'edu.jpg' %}" class="img-responsive" style="width:100%" alt="Image">
+    </div>
+  </div>
+</div><br>
+
+<div class="container-fluid bg-3 text-center">
+  <div class="row">
+    <div class="col-sm-3">
+      <p>Save Tree</p>
+      <img src="{% static 'tree.jpg' %}" class="img-responsive" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-3">
+      <p>Blood donation</p>
+      <img src="{% static 'blood.jpg' %}" class="img-responsive" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-3">
+      <p> Women Empowerment</p>
+      <img src="{% static 'women.jpg' %}" class="img-responsive" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-3">
+      <p>social</p>
+      <img src="{% static 'water.jpg' %}" class="img-responsive" style="width:100%" alt="Image">
+    </div>
+  </div>
+</div><br><br>
+
+
+
+
+  <footer class="container-fluid text-center">
+
+      <ol class="list-unstyled">
+                    <a href="mailto:shrinarayansevasamiti@gmail.com">Send email</a>
+                    <li><a href="https://www.youtube.com/channel/UC2ZecwOucQ7lNtgB4aRoIrw/featured">youtube</a></li>
+                    <li><a href="https://www.facebook.com/FounderChandraMohanChaheta">Facebook</a></li>
+                </ol>
+    <p>Shree narayan manav seva samiti</p>
+</footer>
+
+
+
+
+
+
+</div>
+{% endblock %}
+{% block js %}
+<script>
+// Find out the cart items from localStorage
+if (localStorage.getItem('cart') == null) {
+    var cart = {};
+} else {
+    cart = JSON.parse(localStorage.getItem('cart'));
+    updateCart(cart);
+}
+
+// If the add to cart button is clicked, add/increment the item
+//$('.cart').click(function() {
+    $('.divpr').on('click', 'button.cart', function(){
+    var idstr = this.id.toString();
+    if (cart[idstr] != undefined) {
+        qty = cart[idstr][0] + 1;
+    } else {
+        qty = 1;
+        name = document.getElementById('name'+idstr).innerHTML;
+        price = document.getElementById('price'+idstr).innerHTML;
+        cart[idstr] = [qty, name, parseInt(price)];
+
+    }
+    updateCart(cart);
+
+});
+
+//Add Popover to cart
+$('#popcart').popover();
+updatePopover(cart);
+
+function updatePopover(cart) {
+    console.log('We are inside updatePopover');
+    var popStr = "";
+    popStr = popStr + "<h5> Cart for your items in my shopping cart </h5><div class='mx-2 my-2'>";
+    var i = 1;
+    for (var item in cart) {
+        popStr = popStr + "<b>" + i + "</b>. ";
+        popStr = popStr + document.getElementById('name' + item).innerHTML.slice(0, 19) + "... Qty: " + cart[item][0] + '<br>';
+        i = i + 1;
+
+    }
+
+    popStr = popStr + "</div> <a href='/shop/checkout'><button class='btn btn-primary' id ='checkout'>Checkout</button></a> <button class='btn btn-primary' onclick='clearCart()' id ='clearCart'>Clear Cart</button>     "
+    console.log(popStr);
+    document.getElementById('popcart').setAttribute('data-content', popStr);
+    $('#popcart').popover('show');
+
+}
+
+function clearCart() {
+    cart = JSON.parse(localStorage.getItem('cart'));
+    for (var item in cart) {
+        document.getElementById('div' + item).innerHTML = '<button id="' + item + '" class="btn btn-primary cart">Add To Cart</button>'
+    }
+    localStorage.clear();
+    cart = {};
+    updateCart(cart);
+
+
+}
+
+function updateCart(cart) {
+    var sum = 0;
+    for (var item in cart) {
+        sum = sum + cart[item][0];
+        document.getElementById('div' + item).innerHTML = "<button id='minus" + item + "' class='btn btn-primary minus'>-</button> <span id='val" + item + "''>" + cart[item][0] + "</span> <button id='plus" + item + "' class='btn btn-primary plus'> + </button>";
+
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    document.getElementById('cart').innerHTML = sum;
+    console.log(cart);
+    updatePopover(cart);
+}
+
+// If plus or minus button is clicked, change the cart as well as the display value
+$('.divpr').on("click", "button.minus", function() {
+    a = this.id.slice(7, );
+    cart['pr' + a][0] = cart['pr' + a][0] - 1;
+    cart['pr' + a][0] = Math.max(0, cart['pr' + a][0]);
+    if (cart['pr' + a][0] == 0){
+        document.getElementById('divpr' + a).innerHTML = '<button id="pr'+a+'" class="btn btn-primary cart">Add to Cart</button>';
+        delete cart['pr'+a];
+    }
+    else{
+        document.getElementById('valpr' + a).innerHTML = cart['pr' + a][0];
+    }
+    updateCart(cart);
+
+});
+
+$('.divpr').on("click", "button.plus", function() {
+    a = this.id.slice(6, );
+    cart['pr' + a][0] = cart['pr' + a][0] + 1;
+    document.getElementById('valpr' + a).innerHTML = cart['pr' + a][0];
+    updateCart(cart);
+});
+</script>
+{% endblock %}

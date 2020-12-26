@@ -1,0 +1,55 @@
+{% extends 'basic.html' %}
+
+{% block title%} Contact Us - My Awesome Cart{% endblock %}
+{% block body %}
+<div class="container my-3">
+    <h3>Contact Us</h3>
+    <form action="/seva/contact/" method="post">{% csrf_token %}
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" name='name' placeholder="Enter Your Name">
+  </div>
+  <div class="form-group">
+    <label for="name">Email</label>
+    <input type="email" class="form-control" id="email" name='email' placeholder="Enter Your Email">
+  </div>
+
+    <div class="form-group">
+    <label for="name">Phone</label>
+    <input type="tel" class="form-control" id="phone" name='phone' placeholder="Enter Your Phone Number">
+  </div>
+
+
+   <div class="form-group">
+    <label for="desc">How May We Help You?</label>
+    <textarea class="form-control" id="desc" name='desc' rows="3"></textarea>
+  </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+</form>
+
+
+
+</div>
+ <footer class="container-fluid text-center">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7120.026458361946!2d75.75389022463736!3d26.839531532636524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db57670859b0b%3A0xdb5215bbbfea50b3!2z4KS24KWN4KSw4KWAIOCkqOCkvuCksOCkvuCkr-CkoyDgpK7gpL7gpKjgpLUg4KS44KWH4KS14KS-IOCkuOCkruCkv-CkpOCkvw!5e0!3m2!1shi!2sin!4v1608704210355!5m2!1shi!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+     </footer>
+ <footer class="container-fluid text-center">
+
+      <ol class="list-unstyled">
+                    <a href="mailto:shrinarayansevasamiti@gmail.com">Send email</a>
+                    <li><a href="https://www.youtube.com/channel/UC2ZecwOucQ7lNtgB4aRoIrw/featured">youtube</a></li>
+                    <li><a href="https://www.facebook.com/FounderChandraMohanChaheta">Facebook</a></li>
+                </ol>
+    <p>Shree narayan manav seva samiti</p>
+</footer>
+
+{% endblock %}
+{% block js%}
+<script>
+{% if thank %}
+alert('Thanks for contacting us. We will get back to you soon!');
+
+document.location = "/";
+{% endif %}
+</script>
+{% endblock %}

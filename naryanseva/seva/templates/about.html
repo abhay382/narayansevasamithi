@@ -1,0 +1,68 @@
+{% extends 'basic.html' %}
+
+{% block title%} About Us{% endblock %}
+{% block body %}
+
+
+{% load static %}
+
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-3">OUR RELIGION IS HUMANITY</h1>
+      <p>
+Narayan Seva Samiti is an NGO in India based in jaipur (Rajasthan).  we have worked extensively for more than three 3 decades to reach out and rehabilitate differently able people from the underprivileged segment. Narayan Seva Sansthan works with 480 branches in India and 49 branches abroad while focusing on alleviating disabilities and providing proper Physical, Social, and Economic Rehabilitation to the needy. We do this through well-planned and comprehensive programs in health, education, rehabilitation, corrective surgeries, and helping aid distribution making us the best charity organization in India.
+
+We are an organization that helps the differently able individuals realize their hopes, dreams, and ambitions and help those who need just a little extra support. So far, Narayan Seva Sansthan and its tireless team with the noble reverences have helped over 421250 individuals free of cost corrective surgeries and we don't intend to stop. Apart from corrective surgeries, we also provide free of cost education to children from tribal belts and vocational training programs in employable skills for differently-abled & needy adults. Our other initiatives involve free of cost mass weddings & Divyang Talent shows that focus upon the social rehabilitation of people in need.
+
+Our aim is to create an inclusive society, where people with disabilities are accepted into the mainstream economy and social life. We believe that every single person is special and talented and is just looking for a chance to excel.</p>
+      <p><a class="btn btn-primary btn-lg" href="/seva/donate/" role="button">Donate &raquo;</a></p>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Example row of columns -->
+  <div class="container-fluid bg-3 text-center">
+  <h3>Some of my Work</h3><br>
+  <div class="row">
+    <div class="col-sm-3">
+
+      <img src="{% static 'ri.jpg' %}" class="img-responsive" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-3">
+
+      <img src="{% static 'rs.jpg' %}" class="img-responsive" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-3">
+      <img src="{% static 'rss.jpg' %}" class="img-responsive" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-3">
+
+      <img src="{% static 'ri.jpg' %}" class="img-responsive" style="width:100%" alt="Image">
+    </div>
+  </div>
+</div><br>
+    </div>
+
+    <hr>
+
+  </div> <!-- /container -->
+
+</main>
+ <footer class="container-fluid text-center">
+
+      <ol class="list-unstyled">
+                    <a href="mailto:shrinarayansevasamiti@gmail.com">Send email</a>
+                    <li><a href="https://www.youtube.com/channel/UC2ZecwOucQ7lNtgB4aRoIrw/featured">youtube</a></li>
+                    <li><a href="https://www.facebook.com/FounderChandraMohanChaheta">Facebook</a></li>
+                </ol>
+    <p>Shree narayan manav seva samiti</p>
+</footer>
+
+
+
+
+
+{% endblock %}

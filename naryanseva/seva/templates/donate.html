@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+
+.responsive {
+  width: 100%;
+  height: auto;
+}
+
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/">Home</a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+
+      </ul>
+    </div>
+  </div>
+</nav>
+{% load static %}
+<div class="jumbotron">
+  <div class="container text-center">
+
+    <h1>Donate Bankaccount</h1>
+   <img src="{% static 'side.jpg' %}" alt="Nature" class="responsive" width="600" height="400">
+    <h1>Donate Now</h1>
+   <img src="{% static 'paytm.jpg' %}" alt="Nature" class="responsive" width="600" height="400">
+    <p>Donate paytum</p>
+
+
+    <h1>NGO Bank Detail :</h1>
+     <p>Account Name :
+Shree Narayan Manav Seva Samiti</p>
+    <p>Account No.: 5873000100007412</p>
+    <p>IFSC Code : PUNB0587300</p>
+    <p>PAN No.: AAOAS5270P</p>
+    <p>Branch : Sanganer, Jaipur</p>
+     <p>80G Reg. No.: 80G/2019-20/A/10675</p>
+     <p>12AA Reg. No.: 12AA/2019-20/A/10797</p>
+     <p>Reg. No.: 292JPR/2014-15</p>
+     <p>Our Organization is Granted Exemption According to the Income Tax Act of 1961 (80 G)</p>
+     <p>Paytm & Google Pay No.- 8278633886</p>
+     <p></p>
+     <p></p>
+     <p></p>
+     <p></p>
+
+
+  </div>
+</div>
+
+
+
+
+ <footer class="container-fluid text-center">
+
+      <ol class="list-unstyled">
+                    <a href="mailto:shrinarayansevasamiti@gmail.com">Send email</a>
+                    <li><a href="https://www.youtube.com/channel/UC2ZecwOucQ7lNtgB4aRoIrw/featured">youtube</a></li>
+                    <li><a href="https://www.facebook.com/FounderChandraMohanChaheta">Facebook</a></li>
+                </ol>
+    <p>Shree narayan manav seva samiti</p>
+</footer>
+
+
+</body>
+</html>
